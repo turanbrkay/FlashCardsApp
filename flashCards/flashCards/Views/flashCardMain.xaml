@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="flashCards.Views.flashCardMain"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            BackgroundColor="#1C2125">
+
+    <ContentPage Title="Tab 1" BackgroundColor="#1C2125" >
+        <RelativeLayout>
+            <swipeCardView:SwipeCardView x:Name="SwipeView1" ItemsSource="{Binding Profiles}" HorizontalOptions="Center" VerticalOptions="Center"
+                                         SupportedDraggingDirections="Left,Down,Right" HeightRequest="2000" WidthRequest="800">
+
+                <swipeCardView:SwipeCardView.ItemTemplate>
+                    <DataTemplate>
+                        <RelativeLayout>
+                            <Frame x:Name="CardWindow" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="True" 
+                                   HeightRequest="580" WidthRequest="300" BackgroundColor="#121212" HorizontalOptions="Center" 
+                                   VerticalOptions="Start" IsVisible="true" Margin="35,80,40,30" >
+                                
+                            </Frame>
+
+                        </RelativeLayout> 
+                    </DataTemplate>
+                </swipeCardView:SwipeCardView.ItemTemplate>
+                
+
+
+            </swipeCardView:SwipeCardView>
+            
+            
+        </RelativeLayout>
+        
+        
+        
+    </ContentPage>
+
+    <ContentPage Title="Tab 2" BackgroundColor="red" />
+  <ContentPage Title="Tab 3" />
+</TabbedPage>
