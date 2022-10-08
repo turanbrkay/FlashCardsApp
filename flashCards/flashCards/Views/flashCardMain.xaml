@@ -11,18 +11,23 @@
             android:TabbedPage.IsSwipePagingEnabled="False"
             BackgroundColor="#1C2125">
 
-    <ContentPage Title="Tab 1" BackgroundColor="#1C2125" >
-        <RelativeLayout>
-            <swipeCardView:SwipeCardView x:Name="SwipeView1" ItemsSource="{Binding Profiles}" HorizontalOptions="Center" VerticalOptions="Center"
-                                         SupportedDraggingDirections="Left,Down,Right" HeightRequest="2000" WidthRequest="800">
+    <ContentPage Title="Tab 1" BackgroundColor="#1C2125"  >
 
+        <StackLayout>
+            
+            
+
+            <swipeCardView:SwipeCardView x:Name="SwipeView1" ItemsSource="{Binding Profiles}" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                                            SupportedDraggingDirections="Left,Down,Right" HeightRequest="2000" WidthRequest="800" Margin="35,80,40,30"
+                                            LoopCards="True" BackCardScale="0.9" >
+                
                 <swipeCardView:SwipeCardView.ItemTemplate>
                     <DataTemplate>
                         <RelativeLayout>
-                            <Frame x:Name="CardWindow" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="True" 
-                                   HeightRequest="580" WidthRequest="300" BackgroundColor="#121212" HorizontalOptions="Center" 
-                                   VerticalOptions="Start" IsVisible="true" Margin="35,80,40,30" >
-                                
+                            <Frame x:Name="CardWindow" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="False" 
+                                    HeightRequest="580" WidthRequest="300" BackgroundColor="#141414" HorizontalOptions="Center" 
+                                    VerticalOptions="Center" IsVisible="true"  >
+
                             </Frame>
 
                         </RelativeLayout> 
@@ -32,14 +37,41 @@
 
 
             </swipeCardView:SwipeCardView>
+
             
-            
-        </RelativeLayout>
+
+
+        </StackLayout>
+
+        
         
         
         
     </ContentPage>
 
-    <ContentPage Title="Tab 2" BackgroundColor="red" />
-  <ContentPage Title="Tab 3" />
+    <ContentPage Title="Tab 2" BackgroundColor="#1C2125">
+        <RelativeLayout>
+            <Frame x:Name="info1" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="False" 
+                   HeightRequest="150" WidthRequest="130" BackgroundColor="#1C2125" HorizontalOptions="Center" 
+                   VerticalOptions="Center" IsVisible="true" Margin="35,90,30,140" />
+
+            <Frame x:Name="info2" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="False" 
+                   HeightRequest="150" WidthRequest="130" BackgroundColor="#1C2125" HorizontalOptions="Center" 
+                   VerticalOptions="Center" IsVisible="true" Margin="205,90,30,140" />
+
+            <Frame x:Name="info3" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="False" 
+                   HeightRequest="150" WidthRequest="130" BackgroundColor="#1C2125" HorizontalOptions="Center" 
+                   VerticalOptions="Center" IsVisible="true" Margin="205,280,30,140" />
+            <Frame x:Name="info4" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="False" 
+                   HeightRequest="150" WidthRequest="130" BackgroundColor="#1C2125" HorizontalOptions="Center" 
+                   VerticalOptions="Center" IsVisible="true" Margin="35,280,30,140" />
+
+            <ImageButton x:Name="userProfileImage" HeightRequest="55" WidthRequest="55" Aspect="AspectFill" CornerRadius="50" BackgroundColor="Transparent"
+                Source="@drawable/add.png" Margin="300,670,30,40" />
+
+            <Button Text="> Vocabulary" HeightRequest="50" WidthRequest="250" Margin="30,675,30,40" Padding="0,0,80,0" Clicked="Button_Clicked"/>
+        </RelativeLayout>
+        
+    </ContentPage>
+    <ContentPage Title="Tab 3" />
 </TabbedPage>

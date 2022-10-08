@@ -62,15 +62,7 @@ namespace flashCards.Views
             _Profiles.Add(new Profile() { Name = "berkay", Age = "18", Photo = "icon.png" });
             _Profiles.Add(new Profile() { Name = "turgut", Age = "30", Photo = "icon.png" });
             _Profiles.Add(new Profile() { Name = "tugce  ", Age = "24", Photo = "icon.png" });
-            _Profiles.Add(new Profile() { Name = "halime", Age = "52", Photo = "icon.png" });
-            _Profiles.Add(new Profile() { Name = "selin", Age = "10", Photo = "icon.png" });
-            _Profiles.Add(new Profile() { Name = "mine", Age = "54", Photo = "icon.png" });
-            _Profiles.Add(new Profile() { Name = "berkay", Age = "18", Photo = "icon.png" });
-            _Profiles.Add(new Profile() { Name = "turgut", Age = "30", Photo = "icon.png" });
-            _Profiles.Add(new Profile() { Name = "tugce  ", Age = "24", Photo = "icon.png" });
-            _Profiles.Add(new Profile() { Name = "halime", Age = "52", Photo = "icon.png" });
-            _Profiles.Add(new Profile() { Name = "selin", Age = "10", Photo = "icon.png" });
-            _Profiles.Add(new Profile() { Name = "mine", Age = "54", Photo = "icon.png" });
+           
         }
         public ObservableCollection<Profile> Profiles
         {
@@ -87,6 +79,11 @@ namespace flashCards.Views
             public string Name { get; set; }
             public string Age { get; set; }
             public string Photo { get; set; }
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new myWords());
         }
     }
 }
