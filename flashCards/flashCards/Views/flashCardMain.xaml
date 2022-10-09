@@ -22,19 +22,39 @@
                                             LoopCards="True" BackCardScale="0.9" >
                 
                 <swipeCardView:SwipeCardView.ItemTemplate>
-                    <DataTemplate>
-                        <RelativeLayout>
-                            <Frame x:Name="CardWindow" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="False" 
+                    <DataTemplate x:Name="myDataTemplate">
+                        
+                        <RelativeLayout x:Name="myRelativeLayout">
+                            <Frame x:Name="cardWindow" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="False" 
                                     HeightRequest="580" WidthRequest="300" BackgroundColor="#141414" HorizontalOptions="Center" 
                                     VerticalOptions="Center" IsVisible="true"  >
+                                <Label x:Name="mylabel" Text="myword" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center"  FontSize="22">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+
+
+
 
                             </Frame>
+                            
+                            
+                            <Frame x:Name="cardWindow2" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="False" 
+                                    HeightRequest="580" WidthRequest="300" BackgroundColor="#141414" HorizontalOptions="Center" 
+                                    VerticalOptions="Center" IsVisible="false"  >
+                                <Label Text="myword" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center"  FontSize="22"/>
+
+                               
+                            </Frame>
+
 
                         </RelativeLayout> 
                     </DataTemplate>
+                    
                 </swipeCardView:SwipeCardView.ItemTemplate>
-                
 
+                
 
             </swipeCardView:SwipeCardView>
 
