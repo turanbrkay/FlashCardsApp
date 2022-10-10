@@ -4,13 +4,35 @@
              x:Class="flashCards.Views.myWords"
              BackgroundColor="#1C2125">
 
+    <StackLayout>
+        <CollectionView x:Name="myCollectionView"
+                        SelectionMode="Single"
+                        Margin="20,5,20,0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
 
-    <ListView x:Name="myListView">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding Name}"
-                          Detail="{Binding Age}"/>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="{Binding Id}"
+                           Grid.Row="0" Grid.RowSpan="2"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+
+                        <Label Text="{Binding Name}"
+                           Grid.Row="0" Grid.Column="1"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding Adress}"
+                           Grid.Row="0" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+    
 </ContentPage>

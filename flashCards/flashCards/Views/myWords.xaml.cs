@@ -13,23 +13,26 @@ namespace flashCards.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class myWords : ContentPage
     {
-        public myWords()
+       
+            public myWords()
         {
 
             InitializeComponent();
-            List<vocabularyInfo> myList = new List<vocabularyInfo>
-            {
-                new vocabularyInfo { Name = "berkay", Age = "18" },
-                new vocabularyInfo { Name = "Suat", Age = "24" }
-            };
-            myListView.ItemsSource = myList;
+            
+           
         }
 
-        class vocabularyInfo
+        protected override async void OnAppearing()
         {
-            public string Name { get; set; }
-            public string Age { get; set; }
+            try
+            {
+                base.OnAppearing();
+                myCollectionView.ItemsSource = await App.MyDatabase.ReadVocabulary();
+            }
+            catch { }
 
         }
+
+
     }
 }

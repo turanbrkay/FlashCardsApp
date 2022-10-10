@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,9 @@ namespace flashCards.Views
     public partial class flashCardMain : TabbedPage
     {
         public ObservableCollection<Profile> _Profiles = new ObservableCollection<Profile>();
+        
+        
+      
         public flashCardMain()
         {
 
@@ -28,33 +33,21 @@ namespace flashCards.Views
 
             CardBinding();
             BindingContext = this;
-
+            
 
 
         }
 
+    
         public void CardBinding()
         {
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
-            _Profiles.Add(new Profile() { Name = "true", Age = "18", Photo = "icon.png", visible = "true" });
+            _Profiles.Add(new Profile() { name = "Understand", surName = "Anlamak"});
+            
 
         }
         public ObservableCollection<Profile> Profiles
         {
+
             get => _Profiles;
             set
             {
@@ -65,20 +58,18 @@ namespace flashCards.Views
 
         public class Profile
         {
-            public string Name { get; set; }
-            public string Age { get; set; }
-            public string Photo { get; set; }
-
-            public string visible { get; set; }
+            public string name { get; set; }
+            public string surName { get; set; }
+            
 
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void vocabularyButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushModalAsync(new myWords());
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        public async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             var label1 = (Label)sender;
             if (label1.Text == "myword")
@@ -89,6 +80,19 @@ namespace flashCards.Views
             {
                 label1.Text = "myword";
             }
+        }
+
+        public async void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            
+          
+            
+
+        }
+
+        async void plusImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new addingWord());
         }
     }
 }

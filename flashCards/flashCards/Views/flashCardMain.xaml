@@ -9,7 +9,8 @@
             xmlns:swipeCardView="clr-namespace:MLToolkit.Forms.SwipeCardView;assembly=MLToolkit.Forms.SwipeCardView"
             android:TabbedPage.ToolbarPlacement="Bottom"
             android:TabbedPage.IsSwipePagingEnabled="False"
-            BackgroundColor="#1C2125">
+            BackgroundColor="#1C2125"
+            NavigationPage.HasNavigationBar='False'>
 
     <ContentPage Title="Tab 1" BackgroundColor="#1C2125"  >
 
@@ -25,29 +26,21 @@
                     <DataTemplate x:Name="myDataTemplate">
                         
                         <RelativeLayout x:Name="myRelativeLayout">
+                           
                             <Frame x:Name="cardWindow" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="False" 
-                                    HeightRequest="580" WidthRequest="300" BackgroundColor="#141414" HorizontalOptions="Center" 
-                                    VerticalOptions="Center" IsVisible="true"  >
+                                HeightRequest="580" WidthRequest="300" BackgroundColor="#141414" HorizontalOptions="Center" 
+                                VerticalOptions="Center" IsVisible="true"  >
                                 <Label x:Name="mylabel" Text="myword" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center"  FontSize="22">
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                     </Label.GestureRecognizers>
                                 </Label>
 
-
-
-
                             </Frame>
                             
                             
-                            <Frame x:Name="cardWindow2" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="False" 
-                                    HeightRequest="580" WidthRequest="300" BackgroundColor="#141414" HorizontalOptions="Center" 
-                                    VerticalOptions="Center" IsVisible="false"  >
-                                <Label Text="myword" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center"  FontSize="22"/>
-
-                               
-                            </Frame>
-
+                            
+                            
 
                         </RelativeLayout> 
                     </DataTemplate>
@@ -87,9 +80,9 @@
                    VerticalOptions="Center" IsVisible="true" Margin="35,280,30,140" />
 
             <ImageButton x:Name="userProfileImage" HeightRequest="55" WidthRequest="55" Aspect="AspectFill" CornerRadius="50" BackgroundColor="Transparent"
-                Source="@drawable/add.png" Margin="300,670,30,40" />
+                Source="@drawable/add.png" Margin="300,670,30,40" Clicked="plusImageButton_Clicked" />
 
-            <Button Text="> Vocabulary" HeightRequest="50" WidthRequest="250" Margin="30,675,30,40" Padding="0,0,80,0" Clicked="Button_Clicked"/>
+            <Button Text="> Vocabulary" HeightRequest="50" WidthRequest="250" Margin="30,675,30,40" Padding="0,0,80,0" Clicked="vocabularyButton_Clicked"/>
         </RelativeLayout>
         
     </ContentPage>
