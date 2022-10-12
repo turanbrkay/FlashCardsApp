@@ -5,10 +5,10 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry Placeholder="EnglishName"
-                   x:Name="englishNameEntry"
+                   x:Name="word"
                    TextTransform="Uppercase"/>
             <Entry Placeholder="TurkishName"
-                   x:Name="turkishNameEntry"/>
+                   x:Name="mean"/>
             <Button Text="Save"
                     Clicked="addingButton_Clicked"/>
         </StackLayout>

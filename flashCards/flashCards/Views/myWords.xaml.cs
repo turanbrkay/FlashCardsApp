@@ -1,4 +1,5 @@
-﻿using System;
+﻿using flashCards.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Cache;
@@ -33,6 +34,16 @@ namespace flashCards.Views
 
         }
 
-
+        async void SwipeItem_Invoked(object sender, EventArgs e)
+        {
+            var item = sender as SwipeItem;
+            var word = item.CommandParameter as vocabularyModel;
+            var result = await DisplayAlert("Delete", $"{word.Name} will be deleted from database", "Yes", "No");
+            if (result)
+            {
+                await App.MyDatabase.DeleteVocabulary(word);
+                myCollectionView.ItemsSource = await App.MyDatabase.ReadVocabulary();
+            }
+        }
     }
 }

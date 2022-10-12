@@ -86,5 +86,7 @@
         </RelativeLayout>
         
     </ContentPage>
-    <ContentPage Title="Tab 3" />
+    <ContentPage Title="Tab 3" >
+       
+    </ContentPage>
 </TabbedPage>

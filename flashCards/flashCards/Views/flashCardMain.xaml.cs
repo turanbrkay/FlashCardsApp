@@ -1,21 +1,9 @@
-﻿using MLToolkit.Forms.SwipeCardView;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
-using static Xamarin.Essentials.Permissions;
 
 namespace flashCards.Views
 {
@@ -42,7 +30,8 @@ namespace flashCards.Views
         public void CardBinding()
         {
             _Profiles.Add(new Profile() { name = "Understand", surName = "Anlamak"});
-            
+            _Profiles.Add(new Profile() { name = "Understand", surName = "Anlamak" });
+
 
         }
         public ObservableCollection<Profile> Profiles

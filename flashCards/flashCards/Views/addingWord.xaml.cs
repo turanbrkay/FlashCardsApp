@@ -19,7 +19,7 @@ namespace flashCards.Views
 
         async void addingButton_Clicked(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(englishNameEntry.Text) || string.IsNullOrWhiteSpace(turkishNameEntry.Text)) 
+            if (string.IsNullOrWhiteSpace(mean.Text) || string.IsNullOrWhiteSpace(word.Text)) 
             {
                 await DisplayAlert("invalid", "Blank or WhiteSpace value is invalid", "ok");
             }
@@ -32,8 +32,8 @@ namespace flashCards.Views
         {
             await App.MyDatabase.CreateVocabulary(new Model.vocabularyModel
             {
-                Name = englishNameEntry.Text,
-                Adress = turkishNameEntry.Text
+                Name = word.Text,
+                Surname = mean.Text
             });
             await Navigation.PopAsync();
         }
