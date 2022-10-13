@@ -30,7 +30,7 @@
                             <Frame x:Name="cardWindow" CornerRadius="10" Padding="10" BorderColor="Aqua"  HasShadow="False" 
                                 HeightRequest="580" WidthRequest="300" BackgroundColor="#141414" HorizontalOptions="Center" 
                                 VerticalOptions="Center" IsVisible="true"  >
-                                <Label x:Name="mylabel" Text="myword" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center"  FontSize="22">
+                                <Label x:Name="mylabel" Text="{Binding name}" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center"  FontSize="22">
                                     <Label.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
                                     </Label.GestureRecognizers>
